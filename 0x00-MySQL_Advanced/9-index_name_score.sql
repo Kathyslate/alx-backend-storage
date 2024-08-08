@@ -1,15 +1,4 @@
--- Create function SafeDiv that divides (and returns) the first by the second number
--- or returns 0 if second number is equal to 0
--- function SafeDiv takes 2 arguments: a, INT, b, INT
--- returns a / b or 0 if b == 0
+-- Index idx_name_first_score on table names and first letter of name and score
 
-DELIMITER //
-
-DROP FUNCTION IF EXISTS SafeDiv;
-CREATE FUNCTION SafeDiv(a INT, b INT)
-RETURNS FLOAT DETERMINISTIC
-BEGIN
-	RETURN (IF (b = 0, 0, a / b));
-END //
-
-DELIMITER ;
+CREATE INDEX idx_name_first_score
+ON names(name(1), score);
