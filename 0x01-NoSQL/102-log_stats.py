@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-'''Prints stats about Nginx'''
+'''Task 15's module.
+'''
 from pymongo import MongoClient
 
 
@@ -42,7 +43,7 @@ def print_top_ips(server_collection):
 
 
 def run():
-    '''Provides stats about Nginx logs stored in MongoDB.
+    '''Provides some stats about Nginx logs stored in MongoDB.
     '''
     client = MongoClient('mongodb://127.0.0.1:27017')
     print_nginx_request_logs(client.logs.nginx)
